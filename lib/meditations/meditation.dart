@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Meditation extends StatefulWidget {
+  // TODO implement random photo as background, add sound player from remote
   final String title;
 
   const Meditation({Key key, this.title}) : super(key: key);
@@ -58,6 +59,20 @@ class _MeditationState extends State<Meditation> {
                               this.isPlaying = !this.isPlaying;
                             });
                           }))),
+              SliderTheme(
+                data: SliderTheme.of(context),
+                child: Slider(
+                  value: 20,
+                  min: 0,
+                  max: 250,
+                  divisions: 50,
+                  label: "1:00",
+                  activeColor: Colors.orangeAccent,
+                  onChanged: (val) {
+
+                  },
+                ),
+              ),
             ],
           )
         ])

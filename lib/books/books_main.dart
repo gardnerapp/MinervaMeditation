@@ -22,8 +22,16 @@ class BooksMain extends StatelessWidget {
             ),
           ],
         ),
-       Container(margin: EdgeInsets.only(top: 50.0),
-        child:  GridView.count(
+        Center(
+            child: Text(
+          "Coming Soon !",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 75.0,
+            color: Colors.white,
+          ),
+        )
+            /*  GridView.count(
           crossAxisCount: 2,
           childAspectRatio: .75,
           children: [
@@ -48,7 +56,7 @@ class BooksMain extends StatelessWidget {
               onTap: () {},
             ),
           ],
-        ),
+        ),*/
         )
       ],
     );
