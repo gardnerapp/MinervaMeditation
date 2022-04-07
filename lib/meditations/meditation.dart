@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Meditation extends StatefulWidget {
-  // TODO implement random photo as background, add sound player from remote
+  // TODO add volume control
   final String title;
 
   const Meditation({Key key, this.title}) : super(key: key);
