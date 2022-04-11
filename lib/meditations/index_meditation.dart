@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/api/meditation_api.dart';
-import 'package:mindfullness/meditations/show_meditation.dart';
-
 import 'meditation_card.dart';
 
 class IndexMeditation extends StatelessWidget {

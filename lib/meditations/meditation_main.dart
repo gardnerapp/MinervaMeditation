@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindfullness/meditations/meditation_card.dart';
 import 'package:mindfullness/meditations/index_meditation.dart';
-import 'package:mindfullness/meditations/show_meditation.dart';
 
 
 class MeditationMain extends StatelessWidget {
