@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Meditation extends StatefulWidget {
+class ShowMeditation extends StatefulWidget {
   // TODO add volume control
   final String title;
 
-  const Meditation({Key key, this.title}) : super(key: key);
+  const ShowMeditation({Key key, this.title}) : super(key: key);
 
   @override
-  _MeditationState createState() => _MeditationState();
+  _ShowMeditationState createState() => _ShowMeditationState();
 }
 
-class _MeditationState extends State<Meditation> {
+class _ShowMeditationState extends State<ShowMeditation> {
   bool isPlaying = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/audio_card.dart';
-
-import 'meditation.dart';
+import 'package:mindfullness/meditations/index_meditation.dart';
+import 'package:mindfullness/meditations/show_meditation.dart';
 
 
 class MeditationMain extends StatelessWidget {
@@ -26,25 +26,7 @@ class MeditationMain extends StatelessWidget {
           ],
         ),
         Center(
-            child: ListView.separated(
-                itemBuilder: (BuildContext context, int indx) {
-                  return AudioCard(
-                    title: "Mindfulness Meditation",
-                    subtitle: "Unlock Your Full Potential",
-                    pushDestination: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => Meditation(
-                                title: "Flowing Mind",
-                              )));
-                    },
-                  );
-                },
-                separatorBuilder: (BuildContext context, int indx) {
-                  return SizedBox(height: 40);
-                },
-                itemCount: 15))
+            child: IndexMeditation())
       ],
     );
   }
