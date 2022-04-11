@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mindfullness/models/meditation.dart';
 
 class ShowMeditation extends StatefulWidget {
   // TODO add volume control
-  final String title;
+  final Meditation meditation;
 
-  const ShowMeditation({Key key, this.title}) : super(key: key);
+  const ShowMeditation({Key key, this.meditation}) : super(key: key);
 
   @override
   _ShowMeditationState createState() => _ShowMeditationState();
@@ -18,7 +19,7 @@ class _ShowMeditationState extends State<ShowMeditation> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            widget.title,
+            widget.meditation.title,
             style: TextStyle(fontSize: 25.0),
           ),
         ),

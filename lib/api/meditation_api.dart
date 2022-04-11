@@ -11,7 +11,7 @@ class MeditationAPI {
 
     if (response.statusCode == 200) {
       var body = jsonDecode(response.body);
-      return body.map((e) => MeditationModel.fromJson(e)).toList();
+      return body.map((e) => Meditation.fromJson(e)).toList();
     } else {
       return null;
     }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mindfullness/api/meditation_api.dart';
 import 'package:mindfullness/meditations/show_meditation.dart';
 
-import '../audio_card.dart';
+import 'meditation_card.dart';
 
 class IndexMeditation extends StatelessWidget {
   const IndexMeditation({Key key}) : super(key: key);
@@ -17,17 +17,8 @@ class IndexMeditation extends StatelessWidget {
           if (snapShot.hasData) {
             return ListView.separated(
                 itemBuilder: (BuildContext context, int indx) {
-                  return AudioCard( // TODO extract data & refactor audio card to meditation card, excepts meditation as object ;)
-                    title: "Mindfulness Meditation",
-                    subtitle: "Unlock Your Full Potential",
-                    pushDestination: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) => ShowMeditation(
-                                    title: "Flowing Mind",
-                                  )));
-                    },
+                  return MeditationCard(
+                    meditation: snapShot.data[indx],
                   );
                 },
                 separatorBuilder: (BuildContext context, int indx) {

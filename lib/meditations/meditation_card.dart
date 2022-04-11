@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mindfullness/meditations/show_meditation.dart';
+import 'package:mindfullness/models/meditation.dart';
 
 
-class AudioCard extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final Function pushDestination;
+class MeditationCard extends StatelessWidget {
+  final Meditation meditation;
 
-  const AudioCard({Key key, this.title, this.subtitle, this.pushDestination})
+  const MeditationCard({Key key, this.meditation, })
       : super(key: key);
 
   @override
@@ -25,14 +25,20 @@ class AudioCard extends StatelessWidget {
             color: Colors.orange,
           ),
           title: Text(
-            title,
+            meditation.title,
             style: TextStyle(fontSize: 22.0),
           ),
           subtitle: Text(
-            subtitle,
+            meditation.subtitle,
             style: TextStyle(fontSize: 18.0),
           ),
-          onTap: pushDestination,
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        ShowMeditation(meditation: meditation)));
+          },
         ),
       ),
     );
