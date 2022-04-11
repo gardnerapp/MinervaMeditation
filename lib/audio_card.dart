@@ -15,7 +15,6 @@ class AudioCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
       padding: EdgeInsets.all(1),
-
       child: Card(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
