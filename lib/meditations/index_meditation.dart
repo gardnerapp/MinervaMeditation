@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/api/meditation_api.dart';
+import 'package:mindfullness/shared/infographic.dart';
 import 'meditation_card.dart';
 
 class IndexMeditation extends StatelessWidget {
@@ -8,8 +9,7 @@ class IndexMeditation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MeditationAPI meditationAPI = MeditationAPI();
-    return Expanded(
-      child: FutureBuilder(
+    return FutureBuilder(
         future: meditationAPI.index(),
         builder: (context, snapShot) {
           if (snapShot.hasData) {
@@ -25,13 +25,11 @@ class IndexMeditation extends StatelessWidget {
                 itemCount: snapShot.data.length);
           } else if (snapShot.hasError || !snapShot.hasData) {
             return Container(
-              child: Text("ERROR"),
-            );
+              child:  InfoGraphic(msg: "Error :(\n\n Please Try Later"));
           }
           return Container(
-              height: 100.0, child: Center(child: CircularProgressIndicator()));
+              height: 100.0, child: Center(child: Text("foo", style: TextStyle(fontSize: 40, color: Colors.white),)));
         },
-      ),
-    );
+      );
   }
 }

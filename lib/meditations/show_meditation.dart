@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mindfullness/models/meditation.dart';
 
 class ShowMeditation extends StatefulWidget {
-  // TODO add volume control
   final Meditation meditation;
 
   const ShowMeditation({Key key, this.meditation}) : super(key: key);
@@ -55,52 +54,16 @@ class _ShowMeditationState extends State<ShowMeditation> {
                           alignment: Alignment.topCenter,
                           color: Colors.white,
                           iconSize: 200,
-                          icon: isPlaying ? Icon(Icons.play_arrow) : Icon(Icons.pause),
+                          icon: isPlaying
+                              ? Icon(Icons.play_arrow)
+                              : Icon(Icons.pause),
                           onPressed: () {
                             setState(() {
                               this.isPlaying = !this.isPlaying;
                             });
                           }))),
-              SliderTheme(
-                data: SliderTheme.of(context),
-                child: Slider(
-                  value: 20,
-                  min: 0,
-                  max: 250,
-                  divisions: 50,
-                  label: "1:00",
-                  activeColor: Colors.orangeAccent,
-                  onChanged: (val) {
-
-                  },
-                ),
-              ),
             ],
           )
-        ])
-        /* bottomNavigationBar: Card(
-          color: Colors.grey[50],
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              IconButton(
-                iconSize: 90,
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {},
-              ),
-              IconButton(
-                iconSize: 90,
-                icon: Icon(Icons.play_arrow),
-                onPressed: () {},
-              ),
-              IconButton(
-                iconSize: 90,
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {},
-              ),
-            ],
-          ),
-        )*/);
+        ]));
   }
 }

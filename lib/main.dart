@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Minerva',
+        title: 'Thoughts & Fitness',
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
           splashColor: Colors.deepOrange,
@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Minerva", style: TextStyle(fontSize: 25)),
+          title: Text("Thoughts & Fitness", style: TextStyle(fontSize: 25)),
           bottom: TabBar(
             labelStyle: TextStyle(fontSize: 20),
             tabs: [

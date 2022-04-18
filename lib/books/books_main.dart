@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindfullness/books/book_card.dart';
+import 'package:mindfullness/shared/infographic.dart';
 
 class BooksMain extends StatelessWidget {
   const BooksMain({Key key}) : super(key: key);
@@ -22,15 +22,7 @@ class BooksMain extends StatelessWidget {
             ),
           ],
         ),
-        Center(
-            child: Text(
-          "Coming Soon !",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 75.0,
-            color: Colors.white,
-          ),
-        )
+       InfoGraphic(msg: "Coming Soon"),
             /*  GridView.count(
           crossAxisCount: 2,
           childAspectRatio: .75,
@@ -57,7 +49,6 @@ class BooksMain extends StatelessWidget {
             ),
           ],
         ),*/
-        )
       ],
     );
   }
