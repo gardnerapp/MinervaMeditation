@@ -7,14 +7,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Thoughts & Fitness',
+        title: 'Minerva',
         theme: ThemeData(
           primarySwatch: Colors.deepOrange,
-          splashColor: Colors.deepOrange,
+          splashColor: Colors.orange,
           appBarTheme: AppBarTheme(elevation: 16.0),
           cardTheme: CardTheme(elevation: 20.0, shadowColor: Colors.deepOrange),
           sliderTheme: SliderThemeData(
@@ -38,7 +37,7 @@ class Home extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Thoughts & Fitness", style: TextStyle(fontSize: 25)),
+          title: Text("Minerva", style: TextStyle(fontSize: 25)),
           bottom: TabBar(
             labelStyle: TextStyle(fontSize: 20),
             tabs: [

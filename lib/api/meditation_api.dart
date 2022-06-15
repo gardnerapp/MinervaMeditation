@@ -11,7 +11,7 @@ class MeditationAPI {
 
     if (response.statusCode == 200) {
       var body = jsonDecode(response.body);
-      return body.map((e) => Meditation.fromJson(e)).toList(); // TODO might want to add model.fromJson methods to acha
+      return body.map((e) => Meditation.fromJson(e)).toList();
     } else {
       return null;
     }

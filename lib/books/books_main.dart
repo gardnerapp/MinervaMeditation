@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/shared/infographic.dart';
 
+import 'book_card.dart';
+
 class BooksMain extends StatelessWidget {
   const BooksMain({Key key}) : super(key: key);
 
@@ -22,33 +24,23 @@ class BooksMain extends StatelessWidget {
             ),
           ],
         ),
-       InfoGraphic(msg: "Coming Soon"),
-            /*  GridView.count(
+           GridView.count(
           crossAxisCount: 2,
           childAspectRatio: .75,
           children: [
             BookCard(
-              title: "Bjj Meditation",
-              asset: "lib/assets/img/example_yoga.jpg",
+              title: "Marcus Aurelius's Meditations",
+              asset: "lib/assets/img/marcus_aurelius.jpg",
               onTap: () {},
             ),
             BookCard(
-              title: "Bjj Meditation",
-              asset: "lib/assets/img/example_yoga.jpg",
-              onTap: () {},
-            ),
-            BookCard(
-              title: "Bjj Meditation",
-              asset: "lib/assets/img/example_yoga.jpg",
-              onTap: () {},
-            ),
-            BookCard(
-              title: "Bjj Meditation",
-              asset: "lib/assets/img/example_yoga.jpg",
+              title: "Lao Tzu's Tao Te Ching",
+              asset: "lib/assets/img/lao_tzu.jpg",
               onTap: () {},
             ),
           ],
-        ),*/
+        ),
+        InfoGraphic(msg: "Coming Soon !"),
       ],
     );
   }
