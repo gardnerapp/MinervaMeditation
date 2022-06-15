@@ -24,23 +24,24 @@ class BooksMain extends StatelessWidget {
             ),
           ],
         ),
-           GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: .75,
+        ListView(
+          padding: EdgeInsets.all(25.0),
           children: [
+            InfoGraphic(msg: "Coming Soon!"),
             BookCard(
-              title: "Marcus Aurelius's Meditations",
+              title: "Meditations",
+              author: "Marcus Aurelius",
               asset: "lib/assets/img/marcus_aurelius.jpg",
               onTap: () {},
             ),
             BookCard(
-              title: "Lao Tzu's Tao Te Ching",
+              title: "Tao Te Ching",
+              author: "Lao Tzu",
               asset: "lib/assets/img/lao_tzu.jpg",
               onTap: () {},
             ),
           ],
         ),
-        InfoGraphic(msg: "Coming Soon !"),
       ],
     );
   }
