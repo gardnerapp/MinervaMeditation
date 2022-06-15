@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/models/meditation.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class ShowMeditation extends StatefulWidget {
   final Meditation meditation;
@@ -13,8 +14,27 @@ class ShowMeditation extends StatefulWidget {
 class _ShowMeditationState extends State<ShowMeditation> {
   bool isPlaying = false;
 
+  // Play tack right away, make sur Icons are in line move
+  // setState to pause & play methods
+  // make canva logo
+
   @override
   Widget build(BuildContext context) {
+
+    AudioPlayer audioPlayer = AudioPlayer();
+
+    play() async {
+      int result = await audioPlayer.play(widget.meditation.track);
+      if (result == 1) {
+        // success
+      }
+      print("PL");
+    }
+
+    pause() async {
+      int result = await audioPlayer.pause();
+    }
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -61,6 +81,11 @@ class _ShowMeditationState extends State<ShowMeditation> {
                             setState(() {
                               this.isPlaying = !this.isPlaying;
                             });
+                            if (this.isPlaying) {
+                              play();
+                            } else {
+                              pause;
+                            }
                           }))),
             ],
           )
