@@ -6,6 +6,8 @@ import 'meditation_card.dart';
 class IndexMeditation extends StatelessWidget {
   const IndexMeditation({Key key}) : super(key: key);
 
+  //TODO do Circular progress Indicator
+
   @override
   Widget build(BuildContext context) {
     MeditationAPI meditationAPI = MeditationAPI();
@@ -23,13 +25,18 @@ class IndexMeditation extends StatelessWidget {
                   return SizedBox(height: 40);
                 },
                 itemCount: snapShot.data.length);
-          } else if (snapShot.hasError || !snapShot.hasData) {
+          } else if (snapShot.hasError) {
             return Container(
               child:  InfoGraphic(msg: "Error :(\n\n Please Try Later"));
           }
           return Container(
-              height: 100.0, child: Center(child: Text("foo", style: TextStyle(fontSize: 40, color: Colors.white),)));
-        },
-      );
+            height: 100.0,
+            child: Center(
+                child: CircularProgressIndicator(
+              backgroundColor: Colors.white,
+                  strokeWidth: 10.0,
+            )));
+      },
+    );
   }
 }
