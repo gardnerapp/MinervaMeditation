@@ -12,29 +12,29 @@ class ShowMeditation extends StatefulWidget {
 }
 
 class _ShowMeditationState extends State<ShowMeditation> {
-  bool isPlaying = false;
+  AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
+  PlayerState _playerState = PlayerState.STOPPED;
 
-  // Play tack right away, make sur Icons are in line move
-  // setState to pause & play methods
-  // make canva logo
+  bool get _isPlaying => _playerState == PlayerState.PLAYING;
+
+  @override
+  void initState() {
+    // Set up the audio player when the widget loads
+    _audioPlayer.play(this.widget.meditation.track);
+    setState(() {
+      _playerState = PlayerState.PLAYING;
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-
-    AudioPlayer audioPlayer = AudioPlayer();
-
-    play() async {
-      int result = await audioPlayer.play(widget.meditation.track);
-      if (result == 1) {
-        // success
-      }
-      print("PL");
-    }
-
-    pause() async {
-      int result = await audioPlayer.pause();
-    }
-
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -74,21 +74,31 @@ class _ShowMeditationState extends State<ShowMeditation> {
                           alignment: Alignment.topCenter,
                           color: Colors.white,
                           iconSize: 200,
-                          icon: isPlaying
-                              ? Icon(Icons.play_arrow)
-                              : Icon(Icons.pause),
-                          onPressed: () {
-                            setState(() {
-                              this.isPlaying = !this.isPlaying;
-                            });
-                            if (this.isPlaying) {
-                              play();
-                            } else {
-                              pause;
-                            }
-                          }))),
+                          icon: _isPlaying
+                              ? Icon(Icons
+                                  .pause) // Pause Icon if playing, Play if not playing
+                              : Icon(Icons.play_arrow),
+                          onPressed: () => _playPause()))),
             ],
           )
         ]));
+  }
+
+  _playPause() async {
+    if (_playerState == PlayerState.PLAYING) {
+      final playerResult = await _audioPlayer.pause();
+      if (playerResult == 1) {
+        setState(() {
+          _playerState = PlayerState.PAUSED;
+        });
+      }
+    } else if (_playerState == PlayerState.PAUSED) {
+      final playerResult = await _audioPlayer.resume();
+      if (playerResult == 1) {
+        setState(() {
+          _playerState = PlayerState.PLAYING;
+        });
+      }
+    }
   }
 }
