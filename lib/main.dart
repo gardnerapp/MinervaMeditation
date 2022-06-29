@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mindfullness/books/books_main.dart';
-import 'package:mindfullness/meditations/meditation_main.dart';
+import 'package:mindfullness/views/books/books_main.dart';
+import 'package:mindfullness/views/meditations/meditation_main.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,13 +42,22 @@ class Home extends StatelessWidget {
           bottom: TabBar(
             labelStyle: TextStyle(fontSize: 20),
             tabs: [
-              Tab(text: "Monastery", icon: Icon(Icons.spa, size: 35.0,)),
-              Tab(text: "Library", icon: Icon(Icons.local_library, size: 35.0,))
+              Tab(
+                  text: "Monastery",
+                  icon: Icon(
+                    Icons.spa,
+                    size: 35.0,
+                  )),
+              Tab(
+                  text: "Library",
+                  icon: Icon(
+                    Icons.local_library,
+                    size: 35.0,
+                  ))
             ],
           ),
         ),
-        body: TabBarView(
-            children: [MeditationMain(), BooksMain()]),
+        body: TabBarView(children: [MeditationMain(), BooksMain()]),
       ),
     );
   }

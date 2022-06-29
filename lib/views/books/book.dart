@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindfullness/models/book.dart';
+import 'package:mindfullness/models/book_model.dart';
 
 // Audio will play as tiles no fastforward or rewind just play and pause
 // only title model title includes author

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:mindfullness/api/base_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:mindfullness/models/meditation.dart';
+import 'package:mindfullness/models/meditation_model.dart';
 
 class MeditationAPI {
   final String path = BaseAPI.root + "/meditations";

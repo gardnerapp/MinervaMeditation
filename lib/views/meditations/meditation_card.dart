@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mindfullness/meditations/show_meditation.dart';
-import 'package:mindfullness/models/meditation.dart';
+import 'package:mindfullness/models/meditation_model.dart';
+import 'package:mindfullness/views/meditations/show_meditation.dart';
 
 
 class MeditationCard extends StatelessWidget {

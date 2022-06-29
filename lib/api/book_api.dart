@@ -1,3 +1,5 @@
+import 'package:mindfullness/models/book_model.dart';
+
 import 'base_api.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';

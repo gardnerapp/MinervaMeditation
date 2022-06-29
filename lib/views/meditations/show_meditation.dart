@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindfullness/models/meditation.dart';
+import 'package:mindfullness/models/meditation_model.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class ShowMeditation extends StatefulWidget {
