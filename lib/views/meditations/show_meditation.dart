@@ -62,6 +62,10 @@ class _ShowMeditationState extends State<ShowMeditation> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Please Wait One Moment....",
+                style: TextStyle(fontSize: 16.0, color: Colors.white),
+              ),
               Center(
                   child: Card(
                       shadowColor: Colors.transparent,

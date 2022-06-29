@@ -6,8 +6,6 @@ import 'meditation_card.dart';
 class IndexMeditation extends StatelessWidget {
   const IndexMeditation({Key key}) : super(key: key);
 
-  //TODO do Circular progress Indicator
-
   @override
   Widget build(BuildContext context) {
     MeditationAPI meditationAPI = MeditationAPI();

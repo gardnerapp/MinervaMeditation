@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mindfullness/models/book_model.dart';
+import 'package:mindfullness/views/books/show_book.dart';
 
 class BookCard extends StatelessWidget {
-  final String title;
-  final String author;
-  final String asset;
-  final Function onTap;
+  final Book book;
 
-  const BookCard({Key key, this.title, this.author, this.asset, this.onTap})
-      : super(key: key);
+  const BookCard({Key key, this.book}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +13,16 @@ class BookCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         elevation: 16.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         child: InkWell(
-          onTap: onTap,
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        ShowBook(book: this.book)));
+          },
           child: Container(
             height: 350.0,
             child: Column(
@@ -30,11 +35,15 @@ class BookCard extends StatelessWidget {
                   width: 300.0,
                   child: Image(
                       fit: BoxFit.scaleDown,
-                      image: AssetImage(asset)),
+                      image: NetworkImage(this.book.img)),
                 ),
                 ListTile(
-                  title: Text(this.title, style: TextStyle(fontSize: 35.0), textAlign: TextAlign.center),
-                  subtitle: Text(this.author, style: TextStyle(fontSize: 25.0), textAlign: TextAlign.center),
+                  title: Text(this.book.title,
+                      style: TextStyle(fontSize: 35.0),
+                      textAlign: TextAlign.center),
+                  subtitle: Text(this.book.author,
+                      style: TextStyle(fontSize: 25.0),
+                      textAlign: TextAlign.center),
                 )
               ],
             ),
