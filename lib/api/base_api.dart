@@ -5,8 +5,7 @@ class BaseAPI {
     "Content-Type": "application/json; charset=UTF-8"
   };
 }
-
-// TODO Make sure book index works
-// make sure show book has chapters
-// make sure book chapters player works !
+// todo refector show meditation & show chapter into player widget,
+// write test for book api
+// make sure please wait in player looks good
 
