@@ -1,6 +1,6 @@
 class BaseAPI {
-  static String root = "http://localhost:3000/api/v1/";
-  // Development -> https://minervameditation.app
+  static String root = "https://minervameditation.app/api/v1/";
+  // Development ->
   static Map<String, String> headers = {
     "Content-Type": "application/json; charset=UTF-8"
   };
