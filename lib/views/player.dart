@@ -38,13 +38,15 @@ class _PlayerState extends State<Player> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.home),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (BuildContext context) => Home()));
-          },
-        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext context) => Home()));
+            },
+          ),
+        ],
         title: Text(
           this.widget.title,
           style: TextStyle(fontSize: 25.0),
@@ -72,7 +74,8 @@ class _PlayerState extends State<Player> {
           children: [
             Text(
               "Please Wait One Moment....",
-              style: TextStyle(fontSize: 16.0, color: Colors.white),
+              style: TextStyle(fontSize: 50.0, color: Colors.white),
+              textAlign: TextAlign.center,
             ),
             Center(
                 child: Card(

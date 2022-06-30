@@ -17,7 +17,7 @@ class ChapterCard extends StatelessWidget {
         child: ListTile(
           leading: Icon(
             Icons.book,
-            size: 60.0,
+            size: 40.0,
             color: Colors.orange,
           ),
           title: Text(
