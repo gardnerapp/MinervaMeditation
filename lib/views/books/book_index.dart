@@ -27,6 +27,8 @@ class BookIndex extends StatelessWidget {
                 },
                 itemCount: snapShot.data.length);
           } else if (snapShot.hasError) {
+            print(snapShot.error.toString());
+            print(snapShot.error);
             return Container(
                 child: InfoGraphic(msg: "Error :(\n\n Please Try Later"));
           }
