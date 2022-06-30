@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindfullness/models/chapter_model.dart';
-import 'package:mindfullness/views/books/show_chapter.dart';
+import 'package:mindfullness/views/player.dart';
 
 class ChapterCard extends StatelessWidget {
   final Chapter chapter;
@@ -13,7 +13,7 @@ class ChapterCard extends StatelessWidget {
       padding: EdgeInsets.all(1),
       child: Card(
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
         child: ListTile(
           leading: Icon(
             Icons.book,
@@ -21,15 +21,18 @@ class ChapterCard extends StatelessWidget {
             color: Colors.orange,
           ),
           title: Text(
-           this.chapter.title,
+            this.chapter.title,
             style: TextStyle(fontSize: 22.0),
           ),
           onTap: () {
-           Navigator.push(
+            Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        ShowChapter(chapter: this.chapter)));
+                    builder: (BuildContext context) => Player(
+                          title: this.chapter.title,
+                          track: this.chapter.track,
+                          asset: "lib/assets/img/library.jpg",
+                        )));
           },
         ),
       ),

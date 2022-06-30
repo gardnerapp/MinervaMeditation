@@ -1,19 +1,20 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:mindfullness/models/chapter_model.dart';
 
-import '../../main.dart';
+import '../main.dart';
 
-class ShowChapter extends StatefulWidget {
-  final Chapter chapter;
+class Player extends StatefulWidget {
+  final String title;
+  final String track;
+  final String asset;
 
-  const ShowChapter({Key key, this.chapter}) : super(key: key);
+  const Player({Key key, this.title, this.track, this.asset}) : super(key: key);
 
   @override
-  _ShowChapterState createState() => _ShowChapterState();
+  _PlayerState createState() => _PlayerState();
 }
 
-class _ShowChapterState extends State<ShowChapter> {
+class _PlayerState extends State<Player> {
   AudioPlayer _audioPlayer = AudioPlayer(mode: PlayerMode.MEDIA_PLAYER);
   PlayerState _playerState = PlayerState.STOPPED;
 
@@ -21,7 +22,7 @@ class _ShowChapterState extends State<ShowChapter> {
 
   @override
   void initState() {
-    _audioPlayer.play(this.widget.chapter.track);
+    _audioPlayer.play(this.widget.track);
     setState(() {
       _playerState = PlayerState.PLAYING;
     });
@@ -33,7 +34,6 @@ class _ShowChapterState extends State<ShowChapter> {
     _audioPlayer.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class _ShowChapterState extends State<ShowChapter> {
           },
         ),
         title: Text(
-          this.widget.chapter.title,
+          this.widget.title,
           style: TextStyle(fontSize: 25.0),
         ),
       ),
@@ -59,7 +59,7 @@ class _ShowChapterState extends State<ShowChapter> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('lib/assets/img/library.jpg'),
+                      image: AssetImage(this.widget.asset),
                       fit: BoxFit.cover),
                 ),
               ),
@@ -88,7 +88,7 @@ class _ShowChapterState extends State<ShowChapter> {
                         iconSize: 200,
                         icon: _isPlaying
                             ? Icon(Icons
-                                .pause) // Pause Icon if playing, Play if not playing
+                            .pause) // Pause Icon if playing, Play if not playing
                             : Icon(Icons.play_arrow),
                         onPressed: () => _playPause()))),
           ],
@@ -96,7 +96,6 @@ class _ShowChapterState extends State<ShowChapter> {
       ]),
     );
   }
-
   _playPause() async {
     if (_playerState == PlayerState.PLAYING) {
       final playerResult = await _audioPlayer.pause();

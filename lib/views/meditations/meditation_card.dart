@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mindfullness/models/meditation_model.dart';
-import 'package:mindfullness/views/meditations/show_meditation.dart';
+import '../player.dart';
 
 
 class MeditationCard extends StatelessWidget {
@@ -36,8 +36,11 @@ class MeditationCard extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        ShowMeditation(meditation: meditation)));
+                    builder: (BuildContext context) => Player(
+                          title: this.meditation.title,
+                          track: this.meditation.track,
+                          asset: "lib/assets/img/monastary.jpg",
+                        )));
           },
         ),
       ),
