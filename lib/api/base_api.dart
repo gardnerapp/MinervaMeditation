@@ -5,5 +5,4 @@ class BaseAPI {
     "Content-Type": "application/json; charset=UTF-8"
   };
 }
-// make sure please wait in player looks good
 

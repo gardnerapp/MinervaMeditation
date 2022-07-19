@@ -31,8 +31,10 @@ class _PlayerState extends State<Player> {
   @override
   void dispose() {
     _audioPlayer.dispose();
+
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +43,7 @@ class _PlayerState extends State<Player> {
           IconButton(
             icon: Icon(Icons.home),
             onPressed: () {
+              _audioPlayer.dispose();
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) => Home()));
             },
